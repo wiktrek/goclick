@@ -51,6 +51,8 @@ func run(window *app.Window) error {
 	var startButton widget.Clickable
 	var changeHotkeyButton widget.Clickable
 	hotkey := "F6";
+	// var spawned_thread bool
+
 	for {
 		switch e := window.Event().(type) {
 		case app.DestroyEvent:
@@ -64,7 +66,7 @@ func run(window *app.Window) error {
 			title.Color = maroon
 
 			title.Alignment = text.Middle
-			
+	
 			title.Layout(gtx)
 			
 			hotkey_text := material.H1(theme, hotkey)
@@ -74,12 +76,18 @@ func run(window *app.Window) error {
 			hotkey_text.Color = maroon
 
 			hotkey_text.Alignment = text.Middle
+			
 			for {
-				ev, ok := gtx.Event(key.Filter{Name: key.NameSpace},);
+				ev, ok := gtx.Event(key.Filter{})
 				if !ok {
 						break
 				}
-			fmt.Printf("KEY   : %+v\n", ev)
+				if x, ok := ev.(key.Event); ok {
+					switch x.State {
+						case key.Press:
+							fmt.Printf("KEY   : %+v\n", ev)
+					}
+				}
 			}
 			title.Layout(gtx)
 			start := material.Button(theme, &startButton, "Start")
