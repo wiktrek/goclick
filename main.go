@@ -9,6 +9,8 @@ import (
 	"gioui.org/app"
 	"gioui.org/op"
 	"gioui.org/text"
+	"gioui.org/unit"
+	"gioui.org/widget"
 	"gioui.org/widget/material"
 	"github.com/go-vgo/robotgo"
 )
@@ -16,6 +18,8 @@ import (
 func main() {
 	go func() {
 		window := new(app.Window)
+		window.Option(app.Title("Auto clicker"))
+		window.Option(app.Size(unit.Dp(400), unit.Dp(400)))
 		err := run(window)
 		if err != nil {
 			log.Fatal(err)
@@ -25,6 +29,7 @@ func main() {
 	
 	app.Main()
 }
+
 func check_mouse_location() {
   fmt.Println(robotgo.Location())
 }
@@ -42,28 +47,26 @@ func hold() {
 func run(window *app.Window) error {
 	theme := material.NewTheme()
 	var ops op.Ops
+	var startButton widget.Clickable
 	for {
 		switch e := window.Event().(type) {
 		case app.DestroyEvent:
 			return e.Err
 		case app.FrameEvent:
-			// This graphics context is used for managing the rendering state.
 			gtx := app.NewContext(&ops, e)
 
-			// Define an large label with an appropriate text:
-			title := material.H1(theme, "Hello, Gio")
+			title := material.H1(theme, "Auto clicker")
 
-			// Change the color of the label.
 			maroon := color.NRGBA{R: 127, G: 0, B: 0, A: 255}
 			title.Color = maroon
 
-			// Change the position of the label.
 			title.Alignment = text.Middle
-
-			// Draw the label to the graphics context.
+			
 			title.Layout(gtx)
-
-			// Pass the drawing operations to the GPU.
+			
+			button := material.Button(theme, &startButton, "Start")
+			button.Layout(gtx)
+			
 			e.Frame(gtx.Ops)
 		}
 	}

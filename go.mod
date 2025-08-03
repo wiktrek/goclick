@@ -9,6 +9,7 @@ require (
 
 require (
 	gioui.org/shader v1.0.8 // indirect
+	github.com/MarinX/keylogger v0.0.0-20240620105846-48ca9d01f566 // indirect
 	github.com/dblohm7/wingoes v0.0.0-20250611174154-e3e096948d18 // indirect
 	github.com/ebitengine/purego v0.8.4 // indirect
 	github.com/gen2brain/shm v0.1.1 // indirect
@@ -20,6 +21,7 @@ require (
 	github.com/otiai10/gosseract v2.2.1+incompatible // indirect
 	github.com/otiai10/mint v1.6.3 // indirect
 	github.com/power-devops/perfstat v0.0.0-20240221224432-82ca36839d55 // indirect
+	github.com/robotn/gohook v0.40.0 // indirect
 	github.com/robotn/xgb v0.10.0 // indirect
 	github.com/robotn/xgbutil v0.10.0 // indirect
 	github.com/shirou/gopsutil/v4 v4.25.7 // indirect

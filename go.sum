@@ -7,6 +7,8 @@ gioui.org/shader v1.0.8 h1:6ks0o/A+b0ne7RzEqRZK5f4Gboz2CfG+mVliciy6+qA=
 gioui.org/shader v1.0.8/go.mod h1:mWdiME581d/kV7/iEhLmUgUK5iZ09XR5XpduXzbePVM=
 github.com/BurntSushi/freetype-go v0.0.0-20160129220410-b763ddbfe298/go.mod h1:D+QujdIlUNfa0igpNMk6UIvlb6C252URs4yupRUV4lQ=
 github.com/BurntSushi/graphics-go v0.0.0-20160129215708-b43f31a4a966/go.mod h1:Mid70uvE93zn9wgF92A/r5ixgnvX8Lh68fxp9KQBaI0=
+github.com/MarinX/keylogger v0.0.0-20240620105846-48ca9d01f566 h1:3uD1lmRbdt8Ho73IcAUTxRQtksuupGMigYG0x+yOi+o=
+github.com/MarinX/keylogger v0.0.0-20240620105846-48ca9d01f566/go.mod h1:aKzZ7D15UvH5LboXkeLmcNi+s/f805vUfB+BfW1fqd4=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/dblohm7/wingoes v0.0.0-20250611174154-e3e096948d18 h1:1+ezXI2ZjiS8zenp08GFowF3zkVQ4j8/CPaALxqCBq0=
@@ -42,6 +44,8 @@ github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZb
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/power-devops/perfstat v0.0.0-20240221224432-82ca36839d55 h1:o4JXh1EVt9k/+g42oCprj/FisM4qX9L3sZB3upGN2ZU=
 github.com/power-devops/perfstat v0.0.0-20240221224432-82ca36839d55/go.mod h1:OmDBASR4679mdNQnz2pUhc2G8CO2JrUAVFDRBDP/hJE=
+github.com/robotn/gohook v0.40.0 h1:qqjyRUIoRwwa9yv4xVeL8hX+vdhc9j56p9kF0D+hUuM=
+github.com/robotn/gohook v0.40.0/go.mod h1:wyGik0yb4iwCfJjDprtNkTyxkgQWuKoVPQ3hkz6+6js=
 github.com/robotn/xgb v0.0.0-20190912153532-2cb92d044934/go.mod h1:SxQhJskUJ4rleVU44YvnrdvxQr0tKy5SRSigBrCgyyQ=
 github.com/robotn/xgb v0.10.0 h1:O3kFbIwtwZ3pgLbp1h5slCQ4OpY8BdwugJLrUe6GPIM=
 github.com/robotn/xgb v0.10.0/go.mod h1:SxQhJskUJ4rleVU44YvnrdvxQr0tKy5SRSigBrCgyyQ=
