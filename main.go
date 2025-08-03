@@ -8,6 +8,7 @@ import (
 
 	"gioui.org/app"
 	"gioui.org/io/key"
+	"gioui.org/layout"
 	"gioui.org/op"
 	"gioui.org/text"
 	"gioui.org/unit"
@@ -77,24 +78,34 @@ func run(window *app.Window) error {
 
 			hotkey_text.Alignment = text.Middle
 			
-			for {
-				ev, ok := gtx.Event(key.Filter{})
-				if !ok {
-						break
-				}
-				if x, ok := ev.(key.Event); ok {
-					switch x.State {
-						case key.Press:
-							fmt.Printf("KEY   : %+v\n", ev)
-					}
-				}
-			}
+
 			title.Layout(gtx)
 			start := material.Button(theme, &startButton, "Start")
 			start.Layout(gtx)
 			change_hotkey := material.Button(theme, &changeHotkeyButton, "Change hotkey")
 			change_hotkey.Layout(gtx)
+
 			e.Frame(gtx.Ops)
 		}
 	}
+}
+func open_key_press() {
+	// open a small window for someone to bind the key
+}
+
+func get_key(gtx layout.Context) key.Name {
+	for {
+		ev, ok := gtx.Event(key.Filter{})
+		if !ok {
+				break
+		}
+		if x, ok := ev.(key.Event); ok {
+			switch x.State {
+				case key.Press:
+					fmt.Printf("KEY   : %+v\n", x.Name)
+					return x.Name
+			}
+		}
+	}
+	return key.NameF6
 }
