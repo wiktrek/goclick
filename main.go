@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"image/color"
 	"log"
 	"os"
@@ -9,6 +10,7 @@ import (
 	"gioui.org/op"
 	"gioui.org/text"
 	"gioui.org/widget/material"
+	"github.com/go-vgo/robotgo"
 )
 
 func main() {
@@ -20,9 +22,22 @@ func main() {
 		}
 		os.Exit(0)
 	}()
+	
 	app.Main()
 }
-
+func check_mouse_location() {
+  fmt.Println(robotgo.Location())
+}
+func click_location(button string, x int, y int) {
+	robotgo.Move(x, y)
+}
+func click(button string) {
+	robotgo.Click(button, true)
+}
+func hold() {
+  robotgo.Toggle("left") // toggle
+  robotgo.Toggle("left", "up") // free
+}
 
 func run(window *app.Window) error {
 	theme := material.NewTheme()
