@@ -7,6 +7,7 @@ import (
 	"os"
 
 	"gioui.org/app"
+	"gioui.org/io/key"
 	"gioui.org/op"
 	"gioui.org/text"
 	"gioui.org/unit"
@@ -48,6 +49,8 @@ func run(window *app.Window) error {
 	theme := material.NewTheme()
 	var ops op.Ops
 	var startButton widget.Clickable
+	var changeHotkeyButton widget.Clickable
+	hotkey := "F6";
 	for {
 		switch e := window.Event().(type) {
 		case app.DestroyEvent:
@@ -64,9 +67,25 @@ func run(window *app.Window) error {
 			
 			title.Layout(gtx)
 			
-			button := material.Button(theme, &startButton, "Start")
-			button.Layout(gtx)
-			
+			hotkey_text := material.H1(theme, hotkey)
+
+
+
+			hotkey_text.Color = maroon
+
+			hotkey_text.Alignment = text.Middle
+			for {
+				ev, ok := gtx.Event(key.Filter{Name: key.NameSpace},);
+				if !ok {
+						break
+				}
+			fmt.Printf("KEY   : %+v\n", ev)
+			}
+			title.Layout(gtx)
+			start := material.Button(theme, &startButton, "Start")
+			start.Layout(gtx)
+			change_hotkey := material.Button(theme, &changeHotkeyButton, "Change hotkey")
+			change_hotkey.Layout(gtx)
 			e.Frame(gtx.Ops)
 		}
 	}
